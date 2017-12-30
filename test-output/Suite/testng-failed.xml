@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" name="Failed suite [Suite]">
+  <test name="CreateServiceAlertCH(failed)">
+    <parameter name="browsers" value="Chrome"/>
+    <classes>
+      <class name="automationFramework.CreateIncident">
+        <methods>
+          <include name="Test"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- automationFramework.CreateIncident -->
+    </classes>
+  </test> <!-- CreateServiceAlertCH(failed) -->
+  <test name="CreateIncidentFF(failed)">
+    <parameter name="browsers" value="FF"/>
+    <classes>
+      <class name="automationFramework.CreateIncident">
+        <methods>
+          <include name="Test"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- automationFramework.CreateIncident -->
+    </classes>
+  </test> <!-- CreateIncidentFF(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="true">
+	<!--<test name="ChromeTest">
+		<parameter name="browsers" value="Chrome" />
+		<classes>
+			<class name="automationFramework.CreateServiceAlert" />
+		</classes>
+	</test>-->
+	 <test name="CreateServiceAlertCH">
+		<parameter name="browsers" value="Chrome" />
+		<classes>
+			<class name="automationFramework.CreateIncident" />
+		</classes>
+	</test> 
+	<test name="CreateIncidentFF">
+		<parameter name="browsers" value="FF" />
+		<classes>
+			<class name="automationFramework.CreateIncident" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->
