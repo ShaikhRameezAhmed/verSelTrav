@@ -3,12 +3,12 @@
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="automationFramework.CreateEvent">
+      <class name="automationFramework.CreateIncident">
         <methods>
+          <include name="Test"/>
           <include name="beforeTest"/>
-          <include name="f"/>
         </methods>
-      </class> <!-- automationFramework.CreateEvent -->
+      </class> <!-- automationFramework.CreateIncident -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

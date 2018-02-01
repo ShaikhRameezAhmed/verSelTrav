@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite" parallel="true">
 	<!--<test name="ChromeTest">
 		<parameter name="browsers" value="Chrome" />
@@ -12,10 +12,10 @@
 			<class name="automationFramework.CreateIncident" />
 		</classes>
 	</test> 
-	<test name="CreateIncidentFF">
+	<!-- <test name="CreateIncidentFF">
 		<parameter name="browsers" value="FF" />
 		<classes>
 			<class name="automationFramework.CreateIncident" />
 		</classes>
-	</test>
+	</test>-->
 </suite> <!-- Suite -->

@@ -4,8 +4,12 @@ import java.io.IOException;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -44,15 +48,27 @@ public class CreateIncident {
 			logger.info("Test Case Started");
 			test = rep.startTest("CreateIncidentTest");
 			ExcelDataConfig excel = new ExcelDataConfig(Config.getExcelPath());
-			POM.emailtextbox(driver).sendKeys(excel.getData(0, 1, 0));
-			POM.passwordbox(driver).sendKeys(excel.getData(0, 1, 1));
+			POM.emailtextbox(driver).sendKeys("sally@Travelport.com");
+			POM.passwordbox(driver).sendKeys("Abc1234!");
 			POM.signin(driver);
 			logger.info("Sign in Completed");
 			PageSynchronize.loadPageBeforeNaviating(driver);
 			logger.info("Home Page");
-			IncidentCreate.ButtonCreate(driver);
-			logger.info("Create Button Clicked");
-			PageSynchronize.loadPageBeforeNaviating(driver);
+			/*IncidentCreate.ButtonCreate(driver);
+			logger.info("Create Button Clicked");*/
+			//PageSynchronize.loadPageBeforeNaviating(driver);
+			
+			WebElement modalDisplay = driver.findElement(By.xpath("//div[@class='modal-content yui3-widget-stdmod']"));		
+			WebDriverWait block = new WebDriverWait(driver, 30);	
+			closePopUpDisplayWithFocussed(block);		
+			block.until(ExpectedConditions.visibilityOf(modalDisplay));
+			while((modalDisplay.isDisplayed())) {
+				modalDisplay.click();
+				closePopUpDisplayWithFocussed(block);
+			}
+			
+			
+			
 			IncidentCreate.ButtonQATEST(driver);
 			PageSynchronize.loadPageBeforeNaviating(driver);
 			IncidentCreate.Subject(driver).sendKeys(excel.getData(3, 1, 0));
@@ -79,14 +95,25 @@ public class CreateIncident {
 			rep.flush();
 		} catch (Exception e) {
 			logger.info(e.getMessage());
-			test.log(LogStatus.FAIL, e.getMessage());
+		/*	test.log(LogStatus.FAIL, e.getMessage());
 			rep.endTest(test);
 			rep.flush();
 			Assert.assertTrue(false, e.getMessage());
 			test.log(LogStatus.FAIL, "Creating Incident");
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage());*/
 		}
 
+	}
+
+	private void closePopUpDisplayWithFocussed(WebDriverWait block) {
+		WebElement Cross = driver.findElement(By
+				.xpath("//*[@class='yui3-widget modal yui3-widget-positioned yui3-widget-stacked yui3-widget-modal modal-focused']"
+						+ "/descendant::button[@type='button'][text()='×']"));
+		
+		block.until(ExpectedConditions.visibilityOf(Cross));
+		if(Cross.isDisplayed()) {
+			Cross.click();
+		}
 	}
 	 
 	 @BeforeTest
@@ -102,11 +129,11 @@ public class CreateIncident {
 			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
 		}
 	 
-	 @AfterTest
+	 /*@AfterTest
 		public void afterTest() {
 			rep.endTest(test);
 			rep.flush();
 			driver.quit();
-		}
+		}*/
 	
 }

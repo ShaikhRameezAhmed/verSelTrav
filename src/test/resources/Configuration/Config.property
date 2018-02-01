@@ -1,6 +1,6 @@
-ChromeDriver = C:\\Driver\\chromedriver.exe
+ChromeDriver = D:\\Driver\\chromedriver_win32\\chromedriver.exe
 IEDriver = D:\\IEDriverServer.exe
 URL = https://my.pp.travelport.com/login.jsp
-ExcelPath = C:\\Test Repository\\TestData.xlsx
+ExcelPath = D:\\GitLocalRepo\\verSelTrav\\TestNg.xml
 ScreenShot=C:/Test Repository/Test Screenshots
 ReportPath=C:\\Workspace\\Customerportal\\Report.html

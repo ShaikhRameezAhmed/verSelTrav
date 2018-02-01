@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -57,12 +58,13 @@ public class DriverAndObjectDetails {
 				wd = new ChromeDriver(capabilities);
 				return wd;
 			case FF:
-				/*ProfilesIni prof = new ProfilesIni();			
-				FirefoxProfile ffProfile= prof.getProfile ("myprofile");
+				ProfilesIni prof = new ProfilesIni();			
+				FirefoxProfile ffProfile= prof.getProfile("default");
 				ffProfile.setAcceptUntrustedCertificates(true);
-				ffProfile.setAssumeUntrustedCertificateIssuer(false);*/
+				ffProfile.setAssumeUntrustedCertificateIssuer(false);
+				System.setProperty("webdriver.gecko.driver", "D:\\gecko driver\\geckodriver-v0.19.1\\geckodriver.exe");
 				DesiredCapabilities capability = DesiredCapabilities.firefox();
-				//setUniversalProxyFF(capability,ffProfile);
+				setUniversalProxyFF(capability, ffProfile);
 				wd = new FirefoxDriver(capability);
 				wd.manage().window().maximize();
 				return wd;
