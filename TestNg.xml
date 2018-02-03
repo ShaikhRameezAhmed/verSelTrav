@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+	<test name="ChromeTest">
+		<parameter name="browsers" value="Chrome" />
+		<classes>
+			<class name="automationFramework.CreateServiceAlert" />
+		</classes>
+	</test>
+	 <test name="CreateEventCH1" parallel="tests">
+		<parameter name="browsers" value="Chrome" />
+		<classes>
+			<class name="automationFramework.CreateEvent" />
+		</classes>
+	</test>
+	   <test name="CreateIncidentCH2" parallel="tests">
+		<parameter name="browsers" value="Chrome" />
+		<classes>
+			<class name="automationFramework.CreateIncident" />
+		</classes>
+	</test> 
+ <test name="CreateNewsCH3" parallel="tests">
+		<parameter name="browsers" value="Chrome" />
+		<classes>
+			<class name="automationFramework.CreateNews" />
+		</classes>
+	</test>  
+	 <test name="CreateServiceAlertCH4" parallel="tests">
+		<parameter name="browsers" value="Chrome" />
+		<classes>
+			<class name="automationFramework.CreateServiceAlert" />
+		</classes>
+	</test> 
+	 <test name="UpdateUserProfile" parallel="tests">
+		<parameter name="browsers" value="Chrome" />
+		<classes>
+			<class name="automationFramework.UpdateUserProfile" />
+		</classes>
+	</test>
+	<!-- <test name="CreateIncidentFF">
+		<parameter name="browsers" value="FF" />
+		<classes>
+			<class name="automationFramework.CreateIncident" />
+		</classes>
+	</test>-->
+</suite> <!-- Suite -->

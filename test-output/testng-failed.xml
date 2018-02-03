@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" name="Failed suite [Suite]">
+  <test name="CreateNewsCH3(failed)" parallel="tests">
+    <parameter name="browsers" value="Chrome"/>
+    <classes>
+      <class name="automationFramework.CreateNews">
+        <methods>
+          <include name="getResult"/>
+          <include name="beforeTest"/>
+          <include name="f"/>
+          <include name="afterTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- automationFramework.CreateNews -->
+    </classes>
+  </test> <!-- CreateNewsCH3(failed) -->
+</suite> <!-- Failed suite [Suite] -->
